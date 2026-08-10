@@ -1,6 +1,7 @@
 import "reflect-metadata"
 import { serve } from '@hono/node-server';
 import { Hono } from 'hono';
+import { cors } from 'hono/cors';
 import { EnvironmentConfig } from './infrastructure/config/EnvironmentConfig';
 import { MongoDbDatabase } from './infrastructure/database/MongoDbDatabase';
 import { logger } from 'hono/logger';
@@ -19,7 +20,13 @@ async function main() {
 
   const app = new Hono();
   app.use('*', logger());
-  
+  app.use('/api/auth/*', cors({
+    origin: [process.env.FRONTED_URL!],
+    allowMethods: ['POST', 'GET', 'OPTIONS'],
+    allowHeaders: ['Content-Type', 'Authorization'],
+    credentials: true,
+  }));
+    
   // const userRouter = container.resolve(UserRouter);
   const authRouter = container.resolve(AuthRouter);
   // const articleRouter = container.resolve(ArticleRouter);

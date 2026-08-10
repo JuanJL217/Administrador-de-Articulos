@@ -7,7 +7,7 @@ import { mongodbAdapter } from "better-auth/adapters/mongodb";
 @singleton()
 export class AuthService {
 
-    public readonly authInstance;
+    private authInstance;
 
     constructor(
         @inject(DATA_BASE_TOKEN_INJECTION)
@@ -19,7 +19,10 @@ export class AuthService {
             emailAndPassword: {
                 enabled: true,
                 autoSignIn: true
-            }
+            },
+            trustedOrigins: [
+                process.env.FRONTED_URL!
+            ],
         })
     }
 

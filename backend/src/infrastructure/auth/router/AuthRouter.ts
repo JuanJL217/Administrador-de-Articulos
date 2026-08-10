@@ -16,8 +16,8 @@ export class AuthRouter {
     }
 
     private setupRoutes(): void {
-        this.router.on(['POST', 'GET'], '/api/auth/**', (c: Context) => {
-            return this.authService.authInstance.handler(c.req.raw);
+        this.router.on(['POST', 'GET', 'OPTIONS'], '/api/auth/**', (c: Context) => {
+            return this.authService.handleRequest(c.req.raw);
         });
     }
 
