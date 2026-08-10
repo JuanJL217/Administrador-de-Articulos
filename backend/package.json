@@ -19,6 +19,8 @@
     "better-auth": "^1.6.26",
     "hono": "^4.13.1",
     "mongodb": "^7.5.0",
+    "reflect-metadata": "^0.2.2",
+    "tsyringe": "^4.10.0",
     "zod": "^4.4.3"
   },
   "devDependencies": {

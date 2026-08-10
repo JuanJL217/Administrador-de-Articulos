@@ -1,6 +1,8 @@
+import { singleton } from 'tsyringe';
 import { MongoClient, Db } from 'mongodb';
 
-export class MongoDatabase {
+@singleton()
+export class MongoDbDatabase {
   private client: MongoClient | null = null;
   private db: Db | null = null;
 
@@ -26,7 +28,9 @@ export class MongoDatabase {
 
   public async disconnect(): Promise<void> {
     if (this.client) {
-      await this.client.close();
+        await this.client.close();
+        this.client = null;
+        this.db = null;
     }
   }
 }

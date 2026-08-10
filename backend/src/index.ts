@@ -1,27 +1,36 @@
+import "reflect-metadata"
 import { serve } from '@hono/node-server';
 import { Hono } from 'hono';
 import { EnvironmentConfig } from './infrastructure/config/EnvironmentConfig';
-import { MongoDatabase } from './infrastructure/database/MongoDatabase';
+import { MongoDbDatabase } from './infrastructure/database/MongoDbDatabase';
+import { UserRouter } from "./user/infrastructure/http/routers/UserRouter";
+import { container } from "tsyringe";
+import { AppContainer } from "./infrastructure/container/AppContainer";
+import { AuthRouter } from "./infrastructure/auth/router/AuthRouter";
 
-async function init() {
-  console.log('Iniciando sistema');
+async function main() {
 
   const envConfig = new EnvironmentConfig();
-  const database = new MongoDatabase();
+  const database = new MongoDbDatabase();
+  await database.connect(process.env.MONGO_URI!, process.env.DB_NAME!);
 
-  await database.connect(envConfig.getMongoUri(), envConfig.getDataBaseName());
-  console.log('Conexión a MongoDB establecido');
-
-  const db = database.getDatabase();
+  const appContainer = new AppContainer(database.getDatabase());
+  appContainer.configure();
 
   const app = new Hono();
+  // const userRouter = container.resolve(UserRouter);
+  const authRouter = container.resolve(AuthRouter);
+  // const articleRouter = container.resolve(ArticleRouter);
+
+  // app.route('/', userRouter.router);
+  app.route('/', authRouter.router);
 
   serve({
     fetch: app.fetch,
-    port: envConfig.getPort(),
+    port: Number(process.env.PORT!)
   });
 
-  console.log(`Servidor corriendo en http://localhost:${envConfig.getPort()}`);
+  console.log(`Servidor corriendo en http://localhost:${process.env.PORT}`);
 }
 
-init();
+main();
