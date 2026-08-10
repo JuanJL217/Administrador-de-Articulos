@@ -8,6 +8,7 @@ import { logger } from 'hono/logger';
 import { container } from "tsyringe";
 import { AppContainer } from "./infrastructure/container/AppContainer";
 import { AuthRouter } from "./infrastructure/auth/router/AuthRouter";
+import { ArticleRouter } from "./articles/infrastructure/http/router/ArticleRouter";
 
 async function main() {
 
@@ -27,12 +28,11 @@ async function main() {
     credentials: true,
   }));
     
-  // const userRouter = container.resolve(UserRouter);
   const authRouter = container.resolve(AuthRouter);
-  // const articleRouter = container.resolve(ArticleRouter);
+  app.route('/api/auth', authRouter.router);
 
-  // app.route('/', userRouter.router);
-  app.route('/', authRouter.router);
+  const articleRouter = container.resolve(ArticleRouter);
+  app.route('/api/articles', articleRouter.router);
 
   serve({
     fetch: app.fetch,

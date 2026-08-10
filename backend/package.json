@@ -24,6 +24,7 @@
     "zod": "^4.4.3"
   },
   "devDependencies": {
+    "@swc/core": "^1.15.47",
     "@types/node": "^26.2.0",
     "tsup": "^8.5.1",
     "tsx": "^4.23.11",

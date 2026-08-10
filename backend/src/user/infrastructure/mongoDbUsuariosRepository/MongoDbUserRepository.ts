@@ -1,10 +1,11 @@
 import { User } from "../../domain/User";
 import type { UserRepository } from "../../domain/interfaces/UserRepository";
 import { MongoDbRepository } from "../../../infrastructure/database/MongoDbRepository";
-import { inject } from "tsyringe";
+import { inject, injectable } from "tsyringe";
 import { DATA_BASE_TOKEN_INJECTION } from "../../../infrastructure/container/AppContainer";
 import type { Db } from "mongodb";
 
+@injectable()
   export class MongoDbUserRepository extends MongoDbRepository<User> implements UserRepository {
 
     constructor(

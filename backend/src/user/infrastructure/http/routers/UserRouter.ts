@@ -15,7 +15,7 @@ export class UserRouter {
 
     private setupRoutes(): void {
         this.router.on(['POST', 'GET'], '/api/auth/**', (c: Context) => {
-            return this.authService.authInstance.handler(c.req.raw);
+            return this.authService.handleRequest(c.req.raw);
         });
     }
 }

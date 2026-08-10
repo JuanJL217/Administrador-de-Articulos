@@ -10,7 +10,7 @@ export class AuthService {
     private authInstance;
 
     constructor(
-        @inject(DATA_BASE_TOKEN_INJECTION)
+        @inject("Db")
         private db: Db
     ) {
         this.authInstance = betterAuth({
@@ -31,7 +31,7 @@ export class AuthService {
 
     }
 
-    public async validateRequest(req: Request) {
+    public async validateRequest(req: Request) { 
         return await this.authInstance.api.getSession({
             headers: req.headers
         })
