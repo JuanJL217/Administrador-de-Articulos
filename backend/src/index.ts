@@ -3,7 +3,7 @@ import { serve } from '@hono/node-server';
 import { Hono } from 'hono';
 import { EnvironmentConfig } from './infrastructure/config/EnvironmentConfig';
 import { MongoDbDatabase } from './infrastructure/database/MongoDbDatabase';
-import { UserRouter } from "./user/infrastructure/http/routers/UserRouter";
+import { logger } from 'hono/logger';
 import { container } from "tsyringe";
 import { AppContainer } from "./infrastructure/container/AppContainer";
 import { AuthRouter } from "./infrastructure/auth/router/AuthRouter";
@@ -18,6 +18,8 @@ async function main() {
   appContainer.configure();
 
   const app = new Hono();
+  app.use('*', logger());
+  
   // const userRouter = container.resolve(UserRouter);
   const authRouter = container.resolve(AuthRouter);
   // const articleRouter = container.resolve(ArticleRouter);
