@@ -15,5 +15,3 @@ export const envSchema : z.ZodType<EnvironmentVariables> = z.object({
   BETTER_AUTH_URL: z.string().url({ error: "La URL es inválida" }),
   FRONTED_URL: z.string().url({ error: "La URL es inválida" }),
 });
-
-export type AppConfig = z.infer<typeof envSchema>;

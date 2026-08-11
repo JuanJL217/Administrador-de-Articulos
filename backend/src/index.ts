@@ -12,7 +12,7 @@ import { ArticleRouter } from "./articles/infrastructure/http/router/ArticleRout
 
 async function main() {
 
-  const envConfig = new EnvironmentConfig();
+  EnvironmentConfig.execute();
   const database = new MongoDbDatabase();
   await database.connect(process.env.MONGO_URI!, process.env.DB_NAME!);
 
