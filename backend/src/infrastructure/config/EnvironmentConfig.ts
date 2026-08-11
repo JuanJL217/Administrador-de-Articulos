@@ -1,14 +1,5 @@
 import { z } from 'zod';
-
-const envSchema = z.object({
-  PORT: z.coerce.number({error: "El puerto debe ser un número válido"}),
-  DB_NAME: z.string({error: "El nombre de la base de datos es obligatorio"}),
-  MONGO_URI: z.string().url({ error: "La URL es inválida" }),
-  BETTER_AUTH_URL: z.string().url({ error: "La URL es inválida" }),
-  FRONTED_URL: z.string().url({ error: "La URL es inválida" }),
-});
-
-export type AppConfig = z.infer<typeof envSchema>;
+import { type AppConfig, envSchema } from './EnvSchema';
 
 export class EnvironmentConfig {
   private readonly config: AppConfig;
