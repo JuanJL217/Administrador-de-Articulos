@@ -1,3 +1,5 @@
+import { User } from "../User";
+
 export const USER_REPOSITORY_TOKEN_INJECTION = 'UserRepository';
 
 export interface AuthorStats {
@@ -9,7 +11,7 @@ export interface AuthorStats {
 export interface UserRepository {
 
     getAllAuthorsStats(): Promise<AuthorStats[]>;
-    // findById(id: string): Promise<User | null>;
+    findById(id: string): Promise<User | null>;
     // findByEmail(email: string): Promise<User | null>;
 
 }

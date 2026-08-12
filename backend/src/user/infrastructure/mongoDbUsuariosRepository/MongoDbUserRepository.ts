@@ -53,11 +53,11 @@ import type { Db } from "mongodb";
         .toArray();
     }
 
-    // public async findById(id: string): Promise<User | null> {
-    //   const doc = await this.collection().findOne({ _id: id as any });
-    //   if (!doc) return null;
-    //   return this.toDomain(doc);
-    // }
+    public async findById(id: string): Promise<User | null> {
+      const doc = await this.collection().findOne({ _id: id as any });
+      if (!doc) return null;
+      return this.toDomain(doc);
+    }
 
     // public async findByEmail(email: string): Promise<User | null> {
     //   const doc = await this.collection().findOne({ email });
