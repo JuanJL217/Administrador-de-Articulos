@@ -12,7 +12,6 @@ export class AppContainer {
 
     public configure() {
         container.registerInstance<Db>(DATA_BASE_TOKEN_INJECTION, this.db);
-        
         UserModuleContainer.register();
         ArticleModuleContainer.register();
 }

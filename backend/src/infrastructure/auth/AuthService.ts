@@ -23,6 +23,11 @@ export class AuthService {
             trustedOrigins: [
                 process.env.FRONTED_URL!
             ],
+            advanced : {
+                database: { 
+                    generateId: () => crypto.randomUUID()
+                }
+            }
         })
     }
 
