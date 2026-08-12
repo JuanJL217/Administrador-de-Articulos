@@ -9,6 +9,7 @@ import { container } from "tsyringe";
 import { AppContainer } from "./infrastructure/container/AppContainer";
 import { AuthRouter } from "./infrastructure/auth/router/AuthRouter";
 import { ArticleRouter } from "./articles/infrastructure/http/router/ArticleRouter";
+import { UserRouter } from "./user/infrastructure/http/routers/UserRouter";
 
 async function main() {
 
@@ -20,16 +21,23 @@ async function main() {
   appContainer.configure();
 
   const app = new Hono();
+  
   app.use('*', logger());
-  app.use('/api/auth/*', cors({
+  
+  app.use('*', cors({
     origin: [process.env.FRONTED_URL!],
-    allowMethods: ['POST', 'GET', 'OPTIONS'],
+    allowMethods: ['GET', 'POST', 'PATCH', 'DELETE', 'OPTIONS'],
     allowHeaders: ['Content-Type', 'Authorization'],
+    exposeHeaders: ['Content-Length'],
+    maxAge: 600,
     credentials: true,
   }));
     
   const authRouter = container.resolve(AuthRouter);
   app.route('/api/auth', authRouter.router);
+
+  const userRouter = container.resolve(UserRouter);
+  app.route('/api/users', userRouter.router);
 
   const articleRouter = container.resolve(ArticleRouter);
   app.route('/api/articles', articleRouter.router);
