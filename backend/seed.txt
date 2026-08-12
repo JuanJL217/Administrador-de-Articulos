@@ -1,0 +1,487 @@
+users:
+db.user.insertMany([
+  {
+    _id: 'a1b2c3d4-1234-4a1b-8c9d-1234567890a1',
+    name: 'Sofia',
+    email: 'sofi.gomez88@gmail.com',
+    emailVerified: true,
+    createdAt: new Date('2026-08-10T10:15:00.000Z'),
+    updatedAt: new Date('2026-08-10T10:15:00.000Z')
+  },
+  {
+    _id: 'f5e6d7c8-5678-4b2c-9d0e-2345678901b2',
+    name: 'Mateo',
+    email: 'mateo_lopez_dev@hotmail.com',
+    emailVerified: false,
+    createdAt: new Date('2026-08-11T14:22:10.000Z'),
+    updatedAt: new Date('2026-08-11T14:22:10.000Z')
+  },
+  {
+    _id: '9a8b7c6d-9012-4c3d-ae1f-3456789012c3',
+    name: 'Valentina',
+    email: 'valen.martinez@yahoo.com',
+    emailVerified: true,
+    createdAt: new Date('2026-08-01T08:30:45.000Z'),
+    updatedAt: new Date('2026-08-05T12:00:00.000Z')
+  },
+  {
+    _id: '1f2e3d4c-3456-4d4e-bf2a-4567890123d4',
+    name: 'Santiago',
+    email: 'santiagocorreorandom@gmail.com',
+    emailVerified: false,
+    createdAt: new Date('2026-08-09T19:45:30.000Z'),
+    updatedAt: new Date('2026-08-09T19:45:30.000Z')
+  },
+  {
+    _id: '5b6a7988-7890-4e5f-c03b-5678901234e5',
+    name: 'Camila',
+    email: 'camila_design@outlook.com',
+    emailVerified: true,
+    createdAt: new Date('2026-07-28T16:20:15.000Z'),
+    updatedAt: new Date('2026-08-10T09:10:00.000Z')
+  },
+  {
+    _id: 'd4c3b2a1-1234-4f6a-d14c-6789012345f6',
+    name: 'Nicolas',
+    email: 'nico.tech99@gmail.com',
+    emailVerified: false,
+    createdAt: new Date('2026-08-11T22:11:05.000Z'),
+    updatedAt: new Date('2026-08-11T22:11:05.000Z')
+  },
+  {
+    _id: '8c7d6e5f-5678-4a7b-e25d-7890123456a7',
+    name: 'Lucia',
+    email: 'lu.fernandez@gmail.com',
+    emailVerified: true,
+    createdAt: new Date('2026-08-12T01:05:50.000Z'),
+    updatedAt: new Date('2026-08-12T01:05:50.000Z')
+  },
+  {
+    _id: 'c6d7e8f9-9012-4b8c-f36e-8901234567b8',
+    name: 'Tomas',
+    email: 'tomas.gamer.ok@gmail.com',
+    emailVerified: false,
+    createdAt: new Date('2026-08-05T18:55:20.000Z'),
+    updatedAt: new Date('2026-08-05T18:55:20.000Z')
+  },
+  {
+    _id: 'e4d3c2b1-3456-4c9d-a47f-9012345678c9',
+    name: 'Martina',
+    email: 'martina_articulos@hotmail.com',
+    emailVerified: true,
+    createdAt: new Date('2026-07-15T11:40:10.000Z'),
+    updatedAt: new Date('2026-08-11T10:25:35.000Z')
+  },
+  {
+    _id: '7b8a9900-7890-4dae-b58a-0123456789d0',
+    name: 'Agustin',
+    email: 'agus.rock@yahoo.com',
+    emailVerified: false,
+    createdAt: new Date('2026-08-12T06:15:00.000Z'),
+    updatedAt: new Date('2026-08-12T06:15:00.000Z')
+  },
+  {
+    _id: '1a2b3c4d-1357-4ebf-c69b-1357924680e1',
+    name: 'Florencia',
+    email: 'flor_2026@gmail.com',
+    emailVerified: true,
+    createdAt: new Date('2026-08-02T13:20:00.000Z'),
+    updatedAt: new Date('2026-08-02T13:20:00.000Z')
+  },
+  {
+    _id: '5e6f7a8b-2468-4fc0-d7ac-2468013579f2',
+    name: 'Facundo',
+    email: 'facundo.dev@gmail.com',
+    emailVerified: false,
+    createdAt: new Date('2026-08-11T09:10:45.000Z'),
+    updatedAt: new Date('2026-08-11T09:10:45.000Z')
+  },
+  {
+    _id: '9c0d1e2f-3691-4ad1-e8bd-3579124680a3',
+    name: 'Micaela',
+    email: 'micaela.ventas@outlook.com',
+    emailVerified: true,
+    createdAt: new Date('2026-08-08T15:45:30.000Z'),
+    updatedAt: new Date('2026-08-10T11:30:15.000Z')
+  },
+  {
+    _id: 'd3c2b1a0-4826-4be2-f9ce-4680235791b4',
+    name: 'Diego',
+    email: 'diego_admin@gmail.com',
+    emailVerified: true,
+    createdAt: new Date('2026-07-20T08:00:00.000Z'),
+    updatedAt: new Date('2026-07-20T08:00:00.000Z')
+  },
+  {
+    _id: '7f8e9d0c-5037-4cf3-a0df-5791346802c5',
+    name: 'Julieta',
+    email: 'julieta.music@hotmail.com',
+    emailVerified: false,
+    createdAt: new Date('2026-08-12T03:33:22.000Z'),
+    updatedAt: new Date('2026-08-12T03:33:22.000Z')
+  },
+  {
+    _id: 'b1a2c3d4-6148-4d04-b1ea-6802457913d6',
+    name: 'Federico',
+    email: 'fede_sport@yahoo.com',
+    emailVerified: true,
+    createdAt: new Date('2026-08-07T17:15:40.000Z'),
+    updatedAt: new Date('2026-08-07T17:15:40.000Z')
+  },
+  {
+    _id: 'f5e4d3c2-7259-4e15-c2fb-7913568024e7',
+    name: 'Carolina',
+    email: 'caro.viajes@gmail.com',
+    emailVerified: false,
+    createdAt: new Date('2026-08-11T20:55:10.000Z'),
+    updatedAt: new Date('2026-08-11T20:55:10.000Z')
+  },
+  {
+    _id: '9a8b7c6d-8360-4f26-d30c-8024679135f8',
+    name: 'Gonzalo',
+    email: 'gonza.fotografia@gmail.com',
+    emailVerified: true,
+    createdAt: new Date('2026-08-03T10:40:05.000Z'),
+    updatedAt: new Date('2026-08-09T14:20:00.000Z')
+  },
+  {
+    _id: 'd4c3b2a1-9471-4a37-e41d-9135780246a9',
+    name: 'Paula',
+    email: 'paula.nutricion@outlook.com',
+    emailVerified: true,
+    createdAt: new Date('2026-08-06T12:25:30.000Z'),
+    updatedAt: new Date('2026-08-06T12:25:30.000Z')
+  },
+  {
+    _id: '7b8a9012-0582-4b48-f52e-0246891357b0',
+    name: 'Lucas',
+    email: 'lucas_code@gmail.com',
+    emailVerified: false,
+    createdAt: new Date('2026-08-12T07:15:00.000Z'),
+    updatedAt: new Date('2026-08-12T07:15:00.000Z')
+  }
+]);
+
+articles:
+db.article.insertMany([
+  {
+    _id: 'e1d2c3b4-1111-4a1b-8c9d-123456789001',
+    authorId: '0df174f6-397c-4371-b88c-1e9a554fedfb', 
+    content: 'La inteligencia artificial está cambiando la forma en que interactuamos con el mundo. Este es un análisis profundo de sus alcances en 2026.',
+    createdAt: '2026-08-10T10:00:00.000Z',
+    title: 'El futuro de la IA',
+    urlImage: 'https://picsum.photos/id/1/1200/800'
+  },
+  {
+    _id: 'e1d2c3b4-1111-4a1b-8c9d-123456789002',
+    authorId: '0df174f6-397c-4371-b88c-1e9a554fedfb',
+    content: 'Después de probar este nuevo framework durante semanas, aquí están mis pros y contras definitivos. No creerán el rendimiento que tiene.',
+    createdAt: '2026-08-11T14:30:00.000Z',
+    title: 'Review: Nuevo framework de desarrollo',
+    urlImage: 'https://picsum.photos/id/2/1200/800'
+  },
+  {
+    _id: 'e1d2c3b4-1111-4a1b-8c9d-123456789003',
+    authorId: '11219147-f319-438a-adea-392961663e7e',
+    content: 'Viajar por la patagonia siempre fue mi sueño y finalmente pude lograrlo. Les comparto los mejores lugares para visitar y algunos tips económicos.',
+    createdAt: '2026-08-05T09:15:00.000Z',
+    title: 'Viaje a la Patagonia: Guía 2026',
+    urlImage: 'https://picsum.photos/id/10/1200/800'
+  },
+  {
+    _id: 'e1d2c3b4-1111-4a1b-8c9d-123456789004',
+    authorId: '11219147-f319-438a-adea-392961663e7e',
+    content: 'Una receta sencilla pero increíble para hacer pan casero sin amasar demasiado. La técnica es dejarlo descansar en la heladera toda la noche.',
+    createdAt: '2026-08-08T18:45:00.000Z',
+    title: 'Pan casero sin esfuerzo',
+    urlImage: 'https://picsum.photos/id/20/1200/800'
+  },
+  {
+    _id: 'e1d2c3b4-1111-4a1b-8c9d-123456789005',
+    authorId: 'a1b2c3d4-1234-4a1b-8c9d-1234567890a1',
+    content: 'Muchas veces olvidamos la importancia del diseño limpio. Un buen espacio de trabajo mejora la concentración en un 40%.',
+    createdAt: '2026-08-01T11:20:00.000Z',
+    title: 'Minimalismo en la oficina',
+    urlImage: 'https://picsum.photos/id/30/1200/800'
+  },
+  {
+    _id: 'e1d2c3b4-1111-4a1b-8c9d-123456789006',
+    authorId: 'a1b2c3d4-1234-4a1b-8c9d-1234567890a1',
+    content: 'Los mejores atajos de teclado paraVS Code que me ahorran horas a la semana. Especialmente el número 4.',
+    createdAt: '2026-08-02T16:10:00.000Z',
+    title: 'Productividad para devs',
+    urlImage: 'https://picsum.photos/id/42/1200/800'
+  },
+  {
+    _id: 'e1d2c3b4-1111-4a1b-8c9d-123456789007',
+    authorId: 'f5e6d7c8-5678-4b2c-9d0e-2345678901b2',
+    content: 'Ciclismo de montaña extremo. Ayer recorrimos 50km por senderos increíbles y muy peligrosos.',
+    createdAt: '2026-08-11T20:00:00.000Z',
+    title: 'Aventura en dos ruedas',
+    urlImage: 'https://picsum.photos/id/54/1200/800'
+  },
+  {
+    _id: 'e1d2c3b4-1111-4a1b-8c9d-123456789008',
+    authorId: '9a8b7c6d-9012-4c3d-ae1f-3456789012c3',
+    content: 'Fotografía urbana de noche. Tips sobre ISO, apertura y cómo conseguir capturar las luces de la ciudad sin ruido en la imagen.',
+    createdAt: '2026-08-04T22:30:00.000Z',
+    title: 'Capturando la noche',
+    urlImage: 'https://picsum.photos/id/65/1200/800'
+  },
+  {
+    _id: 'e1d2c3b4-1111-4a1b-8c9d-123456789009',
+    authorId: '1f2e3d4c-3456-4d4e-bf2a-4567890123d4',
+    content: '¿Vale la pena invertir en monitores ultrawide? Te cuento mi experiencia tras un mes de uso intensivo.',
+    createdAt: '2026-08-09T10:15:00.000Z',
+    title: 'Setup ideal 2026',
+    urlImage: 'https://picsum.photos/id/76/1200/800'
+  },
+  {
+    _id: 'e1d2c3b4-1111-4a1b-8c9d-123456789010',
+    authorId: '5b6a7988-7890-4e5f-c03b-5678901234e5',
+    content: 'El diseño gráfico está evolucionando hacia el 3D más rápido que nunca. Herramientas como Blender son imprescindibles hoy en día.',
+    createdAt: '2026-07-30T13:45:00.000Z',
+    title: 'Tendencias de diseño 3D',
+    urlImage: 'https://picsum.photos/id/111/1200/800'
+  },
+  {
+    _id: 'e1d2c3b4-1111-4a1b-8c9d-123456789011',
+    authorId: '5b6a7988-7890-4e5f-c03b-5678901234e5',
+    content: 'Paletas de colores audaces para tus nuevas aplicaciones móviles. Abandona el aburrido blanco y negro.',
+    createdAt: '2026-08-07T08:30:00.000Z',
+    title: 'Color y UI/UX',
+    urlImage: 'https://picsum.photos/id/122/1200/800'
+  },
+  {
+    _id: 'e1d2c3b4-1111-4a1b-8c9d-123456789012',
+    authorId: 'd4c3b2a1-1234-4f6a-d14c-6789012345f6',
+    content: 'Mejores prácticas para configurar tu servidor Linux desde cero asegurando firewall y accesos SSH.',
+    createdAt: '2026-08-11T17:15:00.000Z',
+    title: 'Seguridad en servidores',
+    urlImage: 'https://picsum.photos/id/133/1200/800'
+  },
+  {
+    _id: 'e1d2c3b4-1111-4a1b-8c9d-123456789013',
+    authorId: '8c7d6e5f-5678-4a7b-e25d-7890123456a7',
+    content: 'Un repaso sobre cómo mantener las plantas de interior vivas y saludables, incluso si sientes que no tienes mano verde.',
+    createdAt: '2026-08-12T05:00:00.000Z',
+    title: 'Botánica para principiantes',
+    urlImage: 'https://picsum.photos/id/144/1200/800'
+  },
+  {
+    _id: 'e1d2c3b4-1111-4a1b-8c9d-123456789014',
+    authorId: 'c6d7e8f9-9012-4b8c-f36e-8901234567b8',
+    content: 'La nueva generación de consolas está aquí. Comparativa exhaustiva de tiempos de carga y catálogo inicial.',
+    createdAt: '2026-08-05T19:20:00.000Z',
+    title: 'Guerra de Consolas 2026',
+    urlImage: 'https://picsum.photos/id/155/1200/800'
+  },
+  {
+    _id: 'e1d2c3b4-1111-4a1b-8c9d-123456789015',
+    authorId: 'c6d7e8f9-9012-4b8c-f36e-8901234567b8',
+    content: 'Top 5 juegos indies que pasaron desapercibidos este año pero que tienes que jugar sí o sí.',
+    createdAt: '2026-08-06T15:10:00.000Z',
+    title: 'Joyas Ocultas del Gaming',
+    urlImage: 'https://picsum.photos/id/166/1200/800'
+  },
+  {
+    _id: 'e1d2c3b4-1111-4a1b-8c9d-123456789016',
+    authorId: 'e4d3c2b1-3456-4c9d-a47f-9012345678c9',
+    content: 'Hoy analizamos el impacto del comercio electrónico en pequeñas localidades y cómo ha impulsado economías locales.',
+    createdAt: '2026-07-25T11:45:00.000Z',
+    title: 'E-commerce local',
+    urlImage: 'https://picsum.photos/id/177/1200/800'
+  },
+  {
+    _id: 'e1d2c3b4-1111-4a1b-8c9d-123456789017',
+    authorId: '7b8a9900-7890-4dae-b58a-0123456789d0',
+    content: 'Los mejores pedales de efecto para conseguir ese tono de guitarra clásico de los años 70.',
+    createdAt: '2026-08-11T13:30:00.000Z',
+    title: 'Tono Vintage Perfecto',
+    urlImage: 'https://picsum.photos/id/188/1200/800'
+  },
+  {
+    _id: 'e1d2c3b4-1111-4a1b-8c9d-123456789018',
+    authorId: '1a2b3c4d-1357-4ebf-c69b-1357924680e1',
+    content: '¿Cómo organizar un evento multitudinario sin enloquecer en el intento? Mi checklist infalible.',
+    createdAt: '2026-08-02T14:20:00.000Z',
+    title: 'Organización de eventos',
+    urlImage: 'https://picsum.photos/id/199/1200/800'
+  },
+  {
+    _id: 'e1d2c3b4-1111-4a1b-8c9d-123456789019',
+    authorId: '5e6f7a8b-2468-4fc0-d7ac-2468013579f2',
+    content: 'Introducción a Docker y Kubernetes. Aprende a contenerizar tus aplicaciones en simples pasos.',
+    createdAt: '2026-08-09T09:40:00.000Z',
+    title: 'DevOps para principiantes',
+    urlImage: 'https://picsum.photos/id/210/1200/800'
+  },
+  {
+    _id: 'e1d2c3b4-1111-4a1b-8c9d-123456789020',
+    authorId: '5e6f7a8b-2468-4fc0-d7ac-2468013579f2',
+    content: 'Automatiza tus finanzas personales usando scripts de Python y APIs de bancos abiertos.',
+    createdAt: '2026-08-10T21:15:00.000Z',
+    title: 'Finanzas + Código',
+    urlImage: 'https://picsum.photos/id/221/1200/800'
+  },
+  {
+    _id: 'e1d2c3b4-1111-4a1b-8c9d-123456789021',
+    authorId: '9c0d1e2f-3691-4ad1-e8bd-3579124680a3',
+    content: 'Estrategias de ventas B2B que están funcionando este año. Deja atrás las llamadas en frío.',
+    createdAt: '2026-08-08T16:00:00.000Z',
+    title: 'Modernizando Ventas B2B',
+    urlImage: 'https://picsum.photos/id/232/1200/800'
+  },
+  {
+    _id: 'e1d2c3b4-1111-4a1b-8c9d-123456789022',
+    authorId: 'd3c2b1a0-4826-4be2-f9ce-4680235791b4',
+    content: 'Resumen de las últimas actualizaciones de la plataforma. Nuevas métricas y roles de administración disponibles.',
+    createdAt: '2026-07-21T10:00:00.000Z',
+    title: 'Release Notes v2.4',
+    urlImage: 'https://picsum.photos/id/243/1200/800'
+  },
+  {
+    _id: 'e1d2c3b4-1111-4a1b-8c9d-123456789023',
+    authorId: '7f8e9d0c-5037-4cf3-a0df-5791346802c5',
+    content: 'La historia detrás del jazz latino, sus exponentes y cómo sigue influenciando la música moderna.',
+    createdAt: '2026-08-12T04:15:00.000Z',
+    title: 'Raíces del Latin Jazz',
+    urlImage: 'https://picsum.photos/id/254/1200/800'
+  },
+  {
+    _id: 'e1d2c3b4-1111-4a1b-8c9d-123456789024',
+    authorId: 'b1a2c3d4-6148-4d04-b1ea-6802457913d6',
+    content: 'Rutina rápida de 20 minutos de alta intensidad (HIIT) que puedes hacer en casa sin equipamiento.',
+    createdAt: '2026-08-07T18:00:00.000Z',
+    title: 'Entrenamiento en casa',
+    urlImage: 'https://picsum.photos/id/265/1200/800'
+  },
+  {
+    _id: 'e1d2c3b4-1111-4a1b-8c9d-123456789025',
+    authorId: 'f5e4d3c2-7259-4e15-c2fb-7913568024e7',
+    content: 'Mi escapada de fin de semana a las montañas de Córdoba. Una paz absoluta y desconexión total de las redes.',
+    createdAt: '2026-08-11T21:30:00.000Z',
+    title: 'Desconexión digital',
+    urlImage: 'https://picsum.photos/id/276/1200/800'
+  },
+  {
+    _id: 'e1d2c3b4-1111-4a1b-8c9d-123456789026',
+    authorId: 'f5e4d3c2-7259-4e15-c2fb-7913568024e7',
+    content: '¿Cómo armar la valija perfecta para un mes de viaje por Europa en invierno? Las capas son la clave.',
+    createdAt: '2026-08-12T09:10:00.000Z',
+    title: 'Pack de invierno',
+    urlImage: 'https://picsum.photos/id/287/1200/800'
+  },
+  {
+    _id: 'e1d2c3b4-1111-4a1b-8c9d-123456789027',
+    authorId: '9a8b7c6d-8360-4f26-d30c-8024679135f8',
+    content: 'Análisis de cámaras mirrorless de formato completo para fotógrafos independientes de bodas.',
+    createdAt: '2026-08-05T14:45:00.000Z',
+    title: 'Mirrorless vs DSLR 2026',
+    urlImage: 'https://picsum.photos/id/298/1200/800'
+  },
+  {
+    _id: 'e1d2c3b4-1111-4a1b-8c9d-123456789028',
+    authorId: 'd4c3b2a1-9471-4a37-e41d-9135780246a9',
+    content: 'El ayuno intermitente no es para todos. Mitos y verdades detrás de esta tendencia desde el punto de vista nutricional.',
+    createdAt: '2026-08-06T13:00:00.000Z',
+    title: 'Mitos de la nutrición moderna',
+    urlImage: 'https://picsum.photos/id/309/1200/800'
+  },
+  {
+    _id: 'e1d2c3b4-1111-4a1b-8c9d-123456789029',
+    authorId: '7b8a9012-0582-4b48-f52e-0246891357b0',
+    content: 'Refactorizando código heredado (legacy code) sin romper la aplicación. Tests automatizados al rescate.',
+    createdAt: '2026-08-12T08:00:00.000Z',
+    title: 'Salvando el Código Legacy',
+    urlImage: 'https://picsum.photos/id/320/1200/800'
+  },
+  {
+    _id: 'e1d2c3b4-1111-4a1b-8c9d-123456789030',
+    authorId: '7b8a9012-0582-4b48-f52e-0246891357b0',
+    content: 'Librerías de componentes UI en React: ¿Material UI, Chakra UI o Tailwind puro? Ventajas de cada enfoque.',
+    createdAt: '2026-08-12T09:30:00.000Z',
+    title: 'La batalla del Frontend UI',
+    urlImage: 'https://picsum.photos/id/331/1200/800'
+  },
+  {
+    _id: 'e1d2c3b4-1111-4a1b-8c9d-123456789031',
+    authorId: '0df174f6-397c-4371-b88c-1e9a554fedfb',
+    content: 'Mi experiencia adoptando un perro adulto de un refugio. Los primeros 30 días y cómo lograr una adaptación exitosa.',
+    createdAt: '2026-08-01T15:20:00.000Z',
+    title: 'Adoptar un perro adulto',
+    urlImage: 'https://picsum.photos/id/342/1200/800'
+  },
+  {
+    _id: 'e1d2c3b4-1111-4a1b-8c9d-123456789032',
+    authorId: '11219147-f319-438a-adea-392961663e7e',
+    content: 'Consejos para dominar el arte del asado argentino. Los cortes, la brasa y los tiempos perfectos.',
+    createdAt: '2026-08-04T12:00:00.000Z',
+    title: 'Secretos del Asado',
+    urlImage: 'https://picsum.photos/id/353/1200/800'
+  },
+  {
+    _id: 'e1d2c3b4-1111-4a1b-8c9d-123456789033',
+    authorId: 'a1b2c3d4-1234-4a1b-8c9d-1234567890a1',
+    content: 'Explorando la arquitectura brutalista en Latinoamérica y por qué vuelve a ser tendencia entre los jóvenes arquitectos.',
+    createdAt: '2026-08-06T14:10:00.000Z',
+    title: 'El renacer del Brutalismo',
+    urlImage: 'https://picsum.photos/id/364/1200/800'
+  },
+  {
+    _id: 'e1d2c3b4-1111-4a1b-8c9d-123456789034',
+    authorId: 'f5e6d7c8-5678-4b2c-9d0e-2345678901b2',
+    content: 'Cinco lenguajes de programación que están ganando terreno en la industria backend para este 2026.',
+    createdAt: '2026-08-09T18:45:00.000Z',
+    title: 'Tendencias Backend',
+    urlImage: 'https://picsum.photos/id/375/1200/800'
+  },
+  {
+    _id: 'e1d2c3b4-1111-4a1b-8c9d-123456789035',
+    authorId: '1f2e3d4c-3456-4d4e-bf2a-4567890123d4',
+    content: 'Domótica casera paso a paso. Automatiza las luces de tu casa con dispositivos genéricos y Home Assistant.',
+    createdAt: '2026-08-11T12:30:00.000Z',
+    title: 'Casa Inteligente Low-Cost',
+    urlImage: 'https://picsum.photos/id/386/1200/800'
+  },
+  {
+    _id: 'e1d2c3b4-1111-4a1b-8c9d-123456789036',
+    authorId: '8c7d6e5f-5678-4a7b-e25d-7890123456a7',
+    content: 'Repostería sin gluten que sí sabe bien. Mi receta secreta para brownies y galletas con harina de almendras.',
+    createdAt: '2026-08-03T16:00:00.000Z',
+    title: 'Dulces sin Gluten',
+    urlImage: 'https://picsum.photos/id/397/1200/800'
+  },
+  {
+    _id: 'e1d2c3b4-1111-4a1b-8c9d-123456789037',
+    authorId: 'c6d7e8f9-9012-4b8c-f36e-8901234567b8',
+    content: 'Guía para armar tu primera PC Gamer. Cómo evitar cuellos de botella entre procesador y tarjeta gráfica.',
+    createdAt: '2026-08-07T21:10:00.000Z',
+    title: 'Armando una PC Gamer',
+    urlImage: 'https://picsum.photos/id/408/1200/800'
+  },
+  {
+    _id: 'e1d2c3b4-1111-4a1b-8c9d-123456789038',
+    authorId: '1a2b3c4d-1357-4ebf-c69b-1357924680e1',
+    content: 'Cómo usar Trello y Notion combinados para gestionar proyectos grandes de equipo sin perder información clave.',
+    createdAt: '2026-08-02T09:40:00.000Z',
+    title: 'Gestión de proyectos ágil',
+    urlImage: 'https://picsum.photos/id/419/1200/800'
+  },
+  {
+    _id: 'e1d2c3b4-1111-4a1b-8c9d-123456789039',
+    authorId: '9c0d1e2f-3691-4ad1-e8bd-3579124680a3',
+    content: 'Psicología de ventas: cómo los sesgos cognitivos pueden ayudar a mejorar la tasa de conversión en tu landing page.',
+    createdAt: '2026-08-11T11:20:00.000Z',
+    title: 'Neuromarketing aplicado',
+    urlImage: 'https://picsum.photos/id/430/1200/800'
+  },
+  {
+    _id: 'e1d2c3b4-1111-4a1b-8c9d-123456789040',
+    authorId: '0df174f6-397c-4371-b88c-1e9a554fedfb',
+    content: 'Reflexión de fin de año. Todo lo que aprendí gestionando una base de datos en producción por primera vez.',
+    createdAt: '2026-08-12T07:05:00.000Z',
+    title: 'Mis aprendizajes como DBA',
+    urlImage: 'https://picsum.photos/id/441/1200/800'
+  }
+]);
