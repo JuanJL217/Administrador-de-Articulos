@@ -1,15 +1,16 @@
 import { inject, injectable } from "tsyringe";
-import { GetArticle } from "../../../application/Services/GetArticle";
-import { CreateArticle } from "../../../application/Services/CreateArticle";
+import { GetArticle } from "../../../application/services/GetArticle";
+import { CreateArticle } from "../../../application/services/CreateArticle";
 import { Context } from 'hono';
-import { UpdateArticle } from "../../../application/Services/UpdateArticle";
-import { DeleteArticle } from "../../../application/Services/DeleteArticle";
+import { UpdateArticle } from "../../../application/services/UpdateArticle";
+import { DeleteArticle } from "../../../application/services/DeleteArticle";
 import { CatchErrors } from "../../../../infrastructure/decorators/catchErrors";
 import { ValidateSchema, validBody, validParam, validQuery} from "../../../../infrastructure/decorators/validateSchemas";
 import { createArticleBodySchema } from "./Schema/CreateArticleSchema";
 import { updateArticleBodySchema } from "./Schema/UpdateArticleSchema";
 import { articuleIdParamSchema } from "./Schema/ArticleIddParamsSchema";
 import { paginationQuerySchema } from "./Schema/PaginationQuerySchema";
+import { paginationFilteredQuerySchema } from "./Schema/PaginationFilteredQuerySchema";
 
 @injectable()
 export class ArticleController {
@@ -28,11 +29,13 @@ export class ArticleController {
     ){}
 
     @CatchErrors()
-    @ValidateSchema(paginationQuerySchema, "query")
-    public async getAllArticles(c: Context) {
+    @ValidateSchema(paginationFilteredQuerySchema, "query")
+    public async getArticlesFiltered(c: Context) {
         const query = c.get(validQuery);
-        const articles = await this.getArticleService.getAll(query);
-        return c.json(articles, 200);
+        const articles = await this.getArticleService.getArticlesFiltered(query);
+        return c.json({
+            data: articles
+        }, 200);
     }
 
     @CatchErrors()
@@ -43,7 +46,7 @@ export class ArticleController {
         
         const articleCreated = await this.createArticleService.execute({
             authorId: user.id,
-            tittle: body.tittle,
+            title: body.title,
             content: body.content,
             urlImage: body.urlImage
         });
@@ -65,7 +68,7 @@ export class ArticleController {
         const articleUpdated = await this.updateArticleService.execute({
             id: param.id,
             authorId: user.id,
-            tittle: body.tittle,
+            title: body.title,
             content: body.content,
             urlImage: body.urlImage
         });
@@ -89,6 +92,28 @@ export class ArticleController {
 
         return c.json({
             message: 'Articulo eliminado correctamente'
+        }, 200);
+    }
+
+    @CatchErrors()
+    @ValidateSchema(paginationQuerySchema, "query")
+    public async getMyArticles(c: Context) {
+        const user = c.get('user');
+        const query = c.get(validQuery);
+        
+        const articles = await this.getArticleService.getArticlesByUserId(user.id, query);
+        return c.json({
+            data: articles
+        }, 200);
+    }
+
+    @CatchErrors()
+    @ValidateSchema(articuleIdParamSchema, "param")
+    public async getPrivateData(c: Context) {
+        const query = c.get(validParam);
+        const privateData = await this.getArticleService.getPrivateData(query.id);
+        return c.json({
+            data: privateData
         }, 200);
     }
 }

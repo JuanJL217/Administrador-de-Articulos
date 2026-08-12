@@ -20,16 +20,18 @@ export class ArticleRouter {
 
     private setupRoutes(): void {
 
+
         this.router.get(
-            '/',
-            (c) => this.articleController.getAllArticles(c)
+            '/my-articles',
+            (c, next) => this.authMiddleware.requireAuth(c, next),
+            (c) => this.articleController.getMyArticles(c)
         )
 
-        this.router.post(
-            '/',
+        this.router.get(
+            '/:id',
             (c, next) => this.authMiddleware.requireAuth(c, next),
-            (c) => this.articleController.createArticle(c)
-        );
+            (c) => this.articleController.getPrivateData(c)
+        )
 
         this.router.patch(
             '/:id',
@@ -42,5 +44,17 @@ export class ArticleRouter {
             (c, next) => this.authMiddleware.requireAuth(c, next),
             (c) => this.articleController.deleteArticle(c)
         )
+
+        this.router.get(
+            '/',
+            (c) => this.articleController.getArticlesFiltered(c)
+        )
+
+        this.router.post(
+            '/',
+            (c, next) => this.authMiddleware.requireAuth(c, next),
+            (c) => this.articleController.createArticle(c)
+        );
+
     }
 }

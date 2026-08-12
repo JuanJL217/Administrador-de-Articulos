@@ -12,12 +12,12 @@ export class CreateArticle {
 
     public async execute(data: {
         authorId: string
-        tittle: string
+        title: string
         content: string
         urlImage?: string
     }) : Promise<DTOArticle> {
         
-        const existingArticle = await this.articleRepository.findByAuthorAndTitle(data.authorId, data.tittle);
+        const existingArticle = await this.articleRepository.findTitleByAuthor(data.authorId, data.title);
         if (existingArticle) {
             throw new Error('Ya existe este titulo para este autor');
         }
@@ -25,14 +25,14 @@ export class CreateArticle {
         const article = Article.createArticle({
             id: crypto.randomUUID(),
             authorId: data.authorId,
-            tittle: data.tittle,
+            title: data.title,
             content: data.content,
             urlImage: data.urlImage
         });
 
         await this.articleRepository.save(article);
 
-        return article.toPrimitives()
+        return article.publicData()
 
     }
 }

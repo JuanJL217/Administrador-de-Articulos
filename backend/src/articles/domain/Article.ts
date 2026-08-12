@@ -1,10 +1,8 @@
 export interface DTOArticle {
-    id: string;
-    authorId: string;
-    tittle: string;
-    content: string;
-    urlImage: string | undefined;
-    createdAt: string
+    id: string,
+    title: string,
+    content: string,
+    urlImage?: string
 }
 
 export class Article {
@@ -12,7 +10,7 @@ export class Article {
     constructor(
         private id : string,
         private authorId: string,
-        private tittle: string,
+        private title: string,
         private content: string,
         private urlImage: string | undefined,
         private createdAt: Date
@@ -21,7 +19,7 @@ export class Article {
     public static createArticle(data :{
         id: string,
         authorId: string,
-        tittle: string,
+        title: string,
         content: string,
         urlImage: string | undefined
     }): Article {
@@ -29,7 +27,7 @@ export class Article {
         return new Article(
             data.id,
             data.authorId,
-            data.tittle,
+            data.title,
             data.content,
             data.urlImage,
             new Date()
@@ -44,8 +42,8 @@ export class Article {
         return this.authorId;
     }
 
-    public getTittle(): string {
-        return this.tittle;
+    public getTitle(): string {
+        return this.title;
     }
 
     public getContent(): string {
@@ -65,23 +63,44 @@ export class Article {
     }
 
     public update(data : {
-        tittle: string,
+        title: string,
         content: string,
         urlImage: string | undefined
     }): void {
-        this.tittle = data.tittle;
+        this.title = data.title;
         this.content = data.content;
         this.urlImage = data.urlImage;
     }
 
-
-    public toPrimitives() : DTOArticle{
+    public getPublicData() {
         return {
             id: this.id,
-            authorId: this.authorId,
-            tittle: this.tittle,
+            title: this.title,
             content: this.content,
-            urlImage: this.urlImage,
+            urlImage: this.urlImage
+        }
+    }
+
+    public getPrivateData() {
+        return {
+            authorId: this.authorId,
+            createdAt: this.createdAt.toLocaleDateString(),
+        }
+    }
+
+    public publicData() : DTOArticle {
+        return {
+            id: this.id,
+            title: this.title,
+            content: this.content,
+            urlImage: this.urlImage
+        }
+    }
+
+    public getData() {
+        return {
+            ...this.publicData(),
+            authorId: this.authorId,
             createdAt: this.createdAt.toLocaleDateString()
         }
     }

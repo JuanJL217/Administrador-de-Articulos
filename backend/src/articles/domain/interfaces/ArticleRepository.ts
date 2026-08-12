@@ -15,12 +15,19 @@ export interface PaginatedArticlesResult {
     totalPages: number;
 }
 
+export interface ArticleFilters {
+    options: PaginationOptions,
+    author?: string;
+    title?: string;
+    content?: string;
+}
+
 export interface ArticleRepository {
     
-    getAllArticles(options: PaginationOptions): Promise<PaginatedArticlesResult>;
-    findArticlesWithAuthorId(authorId: string, options: PaginationOptions): Promise<PaginatedArticlesResult>;
+    getArticlesFiltered(filters: ArticleFilters): Promise<PaginatedArticlesResult>;
+    getArticlesByUserId(userId: string, options: PaginationOptions): Promise<PaginatedArticlesResult>;
     findById(id: string): Promise<Article | null>;
-    findByAuthorAndTitle(authorId: string, title: string): Promise<Article | null>;
+    findTitleByAuthor(authorId: string, title: string): Promise<Article | null>;
     delete(article: Article): Promise<void>;
     save(article: Article): Promise<void>;
 

@@ -13,7 +13,7 @@ export class UpdateArticle {
     public async execute(data: {
         id: string
         authorId: string
-        tittle: string
+        title: string
         content: string
         urlImage: string | undefined
     }) : Promise<DTOArticle> {
@@ -28,14 +28,14 @@ export class UpdateArticle {
         }
 
         article.update({
-            tittle: data.tittle,
+            title: data.title,
             content: data.content,
             urlImage: data.urlImage
         });
 
         await this.articleRepository.save(article);
 
-        return article.toPrimitives()
+        return article.publicData()
     }
 
 }
