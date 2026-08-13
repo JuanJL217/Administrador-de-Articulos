@@ -1,7 +1,7 @@
 import { inject, singleton } from "tsyringe";
 import { betterAuth } from "better-auth";
 import { Db } from "mongodb";
-import { DATA_BASE_TOKEN_INJECTION } from "../container/AppContainer";
+import { DATA_BASE_TOKEN_INJECTION } from "../../container/AppContainer";
 import { mongodbAdapter } from "better-auth/adapters/mongodb";
 
 @singleton()
@@ -14,6 +14,7 @@ export class AuthService {
         private db: Db
     ) {
         this.authInstance = betterAuth({
+            secret: process.env.BETTER_AUTH_SECRET,
             baseUrl: process.env.BETTER_AUTH_URL,
             database : mongodbAdapter(this.db),
             emailAndPassword: {

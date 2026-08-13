@@ -1,7 +1,7 @@
 import { inject, injectable } from 'tsyringe';
 import { Hono } from 'hono';
 import { ArticleController } from '../controller/ArticleController';
-import { AuthMiddleware } from '../../../../infrastructure/auth/AuthMiddleware';
+import { AuthMiddleware } from '../../../../infrastructure/auth/services/AuthMiddleware';
 
 @injectable()
 export class ArticleRouter {

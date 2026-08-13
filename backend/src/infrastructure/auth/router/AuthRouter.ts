@@ -1,5 +1,5 @@
 import { Hono, Context } from 'hono';
-import { AuthService } from '../AuthService';
+import { AuthService } from '../services/AuthService';
 import { inject, injectable } from 'tsyringe';
 
 @injectable()

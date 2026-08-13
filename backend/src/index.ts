@@ -13,42 +13,58 @@ import { UserRouter } from "./user/infrastructure/http/routers/UserRouter";
 
 async function main() {
 
-  EnvironmentConfig.execute();
-  const database = new MongoDbDatabase();
-  await database.connect(process.env.MONGO_URI!, process.env.DB_NAME!);
-
-  const appContainer = new AppContainer(database.getDatabase());
-  appContainer.configure();
-
-  const app = new Hono();
-  
-  app.use('*', logger());
-  
-  app.use('*', cors({
-    origin: [process.env.FRONTED_URL!],
-    allowMethods: ['GET', 'POST', 'PATCH', 'DELETE', 'OPTIONS'],
-    allowHeaders: ['Content-Type', 'Authorization'],
-    exposeHeaders: ['Content-Length'],
-    maxAge: 600,
-    credentials: true,
-  }));
+  try {
+    EnvironmentConfig.execute();
     
-  const authRouter = container.resolve(AuthRouter);
-  app.route('/api/auth', authRouter.router);
+    const database = new MongoDbDatabase();
+    await database.connect(process.env.MONGO_URI!, process.env.DB_NAME!);
+    console.log("Conectado a la base de datos exitosamente.");
 
-  const userRouter = container.resolve(UserRouter);
-  app.route('/api/users', userRouter.router);
+    const appContainer = new AppContainer(database.getDatabase());
+    appContainer.configure();
 
-  const articleRouter = container.resolve(ArticleRouter);
-  app.route('/api/articles', articleRouter.router);
+    const app = new Hono();
+    
+    app.use('*', logger());
+    
+    app.use('*', cors({
+      origin: process.env.FRONTED_URL!.split(','),
+      allowMethods: ['GET', 'POST', 'PATCH', 'DELETE', 'OPTIONS'],
+      allowHeaders: ['Content-Type', 'Authorization'],
+      maxAge: 600,
+      credentials: true,
+    }));
 
-  serve({
-    fetch: app.fetch,
-    port: Number(process.env.PORT!),
-    hostname: '0.0.0.0'
-  });
+    app.onError((err, c) => {
+      console.error(`[Error Global]: ${err.message}`);
+      return c.json({ error: "Ocurrió un error interno en el servidor." }, 500);
+    });
+      
+    const authRouter = container.resolve(AuthRouter);
+    app.route('/api/auth', authRouter.router);
 
-  console.log(`Servidor corriendo en http://localhost:${process.env.PORT}`);
+    const userRouter = container.resolve(UserRouter);
+    app.route('/api/users', userRouter.router);
+
+    const articleRouter = container.resolve(ArticleRouter);
+    app.route('/api/articles', articleRouter.router);
+
+    const port: number = Number(process.env.PORT) || 3000;
+
+    serve({
+      fetch: app.fetch,
+      port: port,
+      hostname: '0.0.0.0'
+    });
+
+    console.log(`Servidor corriendo en el puerto ${port}`);
+    
+  } catch (error) {
+
+    console.error("Error crítico al iniciar la aplicación:", error);
+    process.exit(1); 
+  }
+  
 }
 
 main();

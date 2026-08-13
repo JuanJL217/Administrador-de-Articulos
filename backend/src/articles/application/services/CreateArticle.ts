@@ -1,6 +1,7 @@
 import { singleton, inject } from "tsyringe";
 import { type ArticleRepository, ARTICLE_REPOSITORY_TOKEN_INJECTION } from "../../domain/interfaces/ArticleRepository";
 import { Article, type DTOArticle } from "../../domain/Article";
+import { ArticleTitleAlreadyExistsError } from "../../domain/error/ArticleTitleAlreadyExistsError";
 
 @singleton()
 export class CreateArticle {
@@ -18,8 +19,9 @@ export class CreateArticle {
     }) : Promise<DTOArticle> {
         
         const existingArticle = await this.articleRepository.findTitleByAuthor(data.authorId, data.title);
+        
         if (existingArticle) {
-            throw new Error('Ya existe este titulo para este autor');
+            throw new ArticleTitleAlreadyExistsError(data.title);
         }
 
         const article = Article.createArticle({

@@ -29,7 +29,7 @@ export class GetArticle {
         const { data, ...paginationMetadata } = paginatedResult;
 
         return {
-            data: data.map(article => article.publicData()),
+            data: data.map(article => article.getData()),
             meta: paginationMetadata
         };
     }
