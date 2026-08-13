@@ -794,14 +794,32 @@ Verificar los contenedores:
 ```bash
 docker compose ps
 ```
+# Agregación de datos: User y Article
+
+## 1. Entrar al contenedor de MongoDB:
+
+```bash
+docker compose exec mongodb mongosh
+```
+
+## 2. Entrar a la base de datos:
+
+```bash
+use administrador_articulos_db
+```
+
+## 3. Pegar el contenido
+Copiar todo el contenido de `seedUser.txt` y `seedArticles.txt` con ctrl+c y pegar con el click derecho del ratón (no aplica ctrl+v)
 
 La aplicación estará disponible en:
 
-```text
 Frontend:
+```bash
 http://localhost:5173
+```
 
 Backend:
+```bash
 http://localhost:3000
 ```
 
