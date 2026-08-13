@@ -39,6 +39,8 @@ La aplicación está preparada para ejecutarse mediante **Docker Compose**, leva
   - [BETTER_AUTH_URL](#better_auth_url)
   - [BETTER_AUTH_SECRET](#better_auth_secret)
   - [FRONTED_URL](#fronted_url)
+  - [Variables del Fronted](#variables-del-fronted)
+  - [VITE_BACKEND_URL](#vite_backend_url)
 - [Requisitos](#requisitos)
 - [Instalación](#instalación)
 - [Ejecución con Docker Compose](#ejecución-con-docker-compose)
@@ -618,9 +620,11 @@ De esta manera se evita realizar una nueva petición únicamente para recuperar 
 
 # Variables de entorno
 
-El proyecto utiliza variables de entorno para evitar almacenar credenciales y configuración sensible directamente en el código fuente.
+El proyecto utiliza variables de entorno para evitar almacenar credenciales y configuración sensible directamente en el código fuente, tanto
 
-Se proporciona un archivo:
+en el backend como en el fronted.
+
+Se proporciona un archivo para ambas carpetas:
 
 ```text
 .env.example
@@ -676,7 +680,7 @@ DB_NAME=administrador_articulos_db
 
 ## BETTER_AUTH_URL
 
-URL base utilizada por Better Auth.
+URL que usará Better Auth para registrar sus peticiones (backend).
 
 Ejemplo:
 
@@ -720,23 +724,17 @@ Esto permite, por ejemplo, acceder al frontend desde un teléfono conectado a la
 
 ---
 
-# Ejemplo de `.env`
+# Variables del Fronted
 
-Un entorno local puede tener una configuración similar a:
+## VITE_BACKEND_URL
+
+Define la url donde se hará las peticiones al backend
+
+Ejemplo:
 
 ```env
-PORT=3000
-
-MONGO_URI=mongodb://mongodb:27017
-DB_NAME=administrador_articulos_db
-
-BETTER_AUTH_URL=http://localhost:3000
-BETTER_AUTH_SECRET=una_clave_secreta_larga_y_aleatoria
-
-FRONTED_URL=http://localhost:5173
+VITE_BACKEND_URL=http://localhost:3000
 ```
-
----
 
 # Requisitos
 
@@ -770,7 +768,7 @@ cd Administrador-de-Articulos
 
 ## 2. Crear las variables de entorno
 
-Crear el archivo `.env` a partir de `.env.example`:
+Crear el archivo `.env` en cada carpeta a partir de `.env.example`:
 
 ```bash
 cp .env.example .env
