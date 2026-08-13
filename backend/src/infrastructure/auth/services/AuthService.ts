@@ -16,26 +16,24 @@ export class AuthService {
         this.authInstance = betterAuth({
             secret: process.env.BETTER_AUTH_SECRET,
             baseUrl: process.env.BETTER_AUTH_URL,
-            database : mongodbAdapter(this.db),
+            database: mongodbAdapter(this.db),
             emailAndPassword: {
                 enabled: true,
                 autoSignIn: true
             },
-            trustedOrigins: process.env.FRONTED_URL!.split(','),
-            advanced : {
-                database: { 
+            trustedOrigins: process.env.FRONTED_URL!.split(","),
+            advanced: {
+                useSecureCookies: true,
+                database: {
                     generateId: () => crypto.randomUUID()
                 },
-                cookie: {
-                    sessionToken: {
-                        attributes : {
-                            sameSite: 'none',
-                            secure: true
-                        }
-                    }
+                defaultCookieAttributes: {
+                    sameSite: "none",
+                    secure: true,
+                    httpOnly: true
                 }
             }
-        })
+        });
     }
 
     public async handleRequest(req: Request) : Promise<Response> {
