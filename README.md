@@ -42,6 +42,7 @@ La aplicación está preparada para ejecutarse mediante **Docker Compose**, leva
 - [Requisitos](#requisitos)
 - [Instalación](#instalación)
 - [Ejecución con Docker Compose](#ejecución-con-docker-compose)
+- [Agregación de datos: User y Article](#agregación-de-datos-user-y-article)
 - [Servicios y puertos](#servicios-y-puertos)
 - [Decisiones técnicas](#decisiones-técnicas)
   - [Separación Frontend / Backend](#separación-frontend--backend)
