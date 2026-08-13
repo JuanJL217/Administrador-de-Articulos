@@ -33,9 +33,7 @@ export class ArticleController {
     public async getArticlesFiltered(c: Context) {
         const query = c.get(validQuery);
         const articles = await this.getArticleService.getArticlesFiltered(query);
-        return c.json({
-            data: articles
-        }, 200);
+        return c.json(articles, 200);
     }
 
     @CatchErrors()
@@ -51,10 +49,7 @@ export class ArticleController {
             urlImage: body.urlImage
         });
 
-        return c.json({
-            data: articleCreated,
-            message : 'Artículo creado exitosamente'
-        }, 201);
+        return c.json(articleCreated, 201);
     }
 
     @CatchErrors()
@@ -73,10 +68,7 @@ export class ArticleController {
             urlImage: body.urlImage
         });
 
-        return c.json({
-            data: articleUpdated,
-            message: 'Articulo editado correctamente'
-        }, 200);
+        return c.json(articleUpdated, 200);
     }
     
     @CatchErrors()
@@ -90,9 +82,7 @@ export class ArticleController {
             authorId: user.id
         });
 
-        return c.json({
-            message: 'Articulo eliminado correctamente'
-        }, 200);
+        return c.json(200);
     }
 
     @CatchErrors()
@@ -102,9 +92,7 @@ export class ArticleController {
         const query = c.get(validQuery);
         
         const articles = await this.getArticleService.getArticlesByUserId(user.id, query);
-        return c.json({
-            data: articles
-        }, 200);
+        return c.json(articles, 200);
     }
 
     @CatchErrors()
@@ -112,8 +100,6 @@ export class ArticleController {
     public async getPrivateData(c: Context) {
         const query = c.get(validParam);
         const privateData = await this.getArticleService.getPrivateData(query.id);
-        return c.json({
-            data: privateData
-        }, 200);
+        return c.json(privateData, 200);
     }
 }

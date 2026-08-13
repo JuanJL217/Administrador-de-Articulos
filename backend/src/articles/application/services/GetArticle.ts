@@ -27,11 +27,10 @@ export class GetArticle {
     }) {
         const paginatedResult = await this.articleRepository.getArticlesByUserId(userId, paginated);
         const { data, ...paginationMetadata } = paginatedResult;
+
         return {
-            articles: {
-                data: data.map(article => article.publicData()),
-                ...paginationMetadata 
-            }
+            data: data.map(article => article.publicData()),
+            meta: paginationMetadata
         };
     }
 
@@ -53,10 +52,8 @@ export class GetArticle {
         const { data, ...paginationMetadata } = paginatedResult;
 
         return {
-            articles: {
-                data: data.map(article => article.publicData()),
-                ...paginationMetadata 
-            }
+            data: data.map(article => article.publicData()),
+            meta: paginationMetadata
         };      
         
     }
@@ -75,8 +72,7 @@ export class GetArticle {
 
         return {
             author: author.getName(),
-            createdAt: articule.getCreatedAt(),
-           ...articule.publicData()
+           ...articule.getData()
         }
     }
 }

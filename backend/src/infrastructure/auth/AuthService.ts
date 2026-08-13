@@ -20,9 +20,7 @@ export class AuthService {
                 enabled: true,
                 autoSignIn: true
             },
-            trustedOrigins: [
-                process.env.FRONTED_URL!
-            ],
+            trustedOrigins: process.env.FRONTED_URL!.split(','),
             advanced : {
                 database: { 
                     generateId: () => crypto.randomUUID()

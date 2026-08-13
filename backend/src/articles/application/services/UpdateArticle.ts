@@ -35,7 +35,7 @@ export class UpdateArticle {
 
         await this.articleRepository.save(article);
 
-        return article.publicData()
+        return article.publicData();
     }
 
 }

@@ -13,5 +13,5 @@ export const envSchema : z.ZodType<EnvironmentVariables> = z.object({
   DB_NAME: z.string({error: "El nombre de la base de datos es obligatorio"}),
   MONGO_URI: z.string().url({ error: "La URL es inválida" }),
   BETTER_AUTH_URL: z.string().url({ error: "La URL es inválida" }),
-  FRONTED_URL: z.string().url({ error: "La URL es inválida" }),
+  FRONTED_URL: z.string(),
 });

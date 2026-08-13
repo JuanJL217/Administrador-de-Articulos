@@ -44,7 +44,8 @@ async function main() {
 
   serve({
     fetch: app.fetch,
-    port: Number(process.env.PORT!)
+    port: Number(process.env.PORT!),
+    hostname: '0.0.0.0'
   });
 
   console.log(`Servidor corriendo en http://localhost:${process.env.PORT}`);

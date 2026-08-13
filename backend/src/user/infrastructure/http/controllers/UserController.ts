@@ -13,8 +13,6 @@ export class UserController {
     @CatchErrors()
     public async getAuthorsStats(c: Context) {
         const authorsStats = await this.getAuthorStats.execute();
-        return c.json({ 
-            data: authorsStats 
-        }, 200);
+        return c.json(authorsStats, 200);
     }
 }
