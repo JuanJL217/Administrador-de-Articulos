@@ -25,6 +25,14 @@ export class AuthService {
             advanced : {
                 database: { 
                     generateId: () => crypto.randomUUID()
+                },
+                cookie: {
+                    sessionToken: {
+                        attributes : {
+                            sameSite: 'none',
+                            secure: true
+                        }
+                    }
                 }
             }
         })
