@@ -740,6 +740,7 @@ VITE_BACKEND_URL=http://localhost:3000
 
 Para ejecutar el proyecto localmente se necesita:
 
+* SO. Linux
 * Git.
 * Node.js.
 * npm.
